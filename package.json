@@ -1,0 +1,19 @@
+{
+  "name": "playwright-bdd-aws",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright version of the Selenium BDD sample flows",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:report": "playwright show-report",
+    "typecheck": "tsc --noEmit",
+    "install:browsers": "playwright install chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^22.15.30",
+    "typescript": "^5.9.2"
+  }
+}
