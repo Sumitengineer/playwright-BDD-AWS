@@ -4,9 +4,9 @@
   "private": true,
   "description": "Playwright version of the Selenium BDD sample flows",
   "scripts": {
-    "test": "playwright test",
-    "test:headed": "playwright test --headed",
-    "test:ui": "playwright test --ui",
+    "test": "node scripts/run-tests.js",
+    "test:headed": "node scripts/run-tests.js --headed",
+    "test:ui": "node scripts/run-tests.js --ui",
     "test:report": "playwright show-report",
     "typecheck": "tsc --noEmit",
     "install:browsers": "playwright install chromium"
@@ -15,5 +15,8 @@
     "@playwright/test": "^1.55.0",
     "@types/node": "^22.15.30",
     "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "nodemailer": "^10.3.1"
   }
 }

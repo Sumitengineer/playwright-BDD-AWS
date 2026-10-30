@@ -58,3 +58,19 @@ with environment variables when needed:
 | `HRM_URL` | `https://hrm.anhtester.com/` |
 | `HRM_USERNAME` | `admin_example` |
 | `HRM_PASSWORD` | `123456` |
+
+## Email reports
+
+After each Playwright run, the project creates a PDF from the HTML report and
+emails both report files using Yahoo SMTP. Set the SMTP app password in the
+environment before running tests; never commit it to the repository:
+
+```powershell
+$env:SMTP_PASSWORD = "<your Yahoo app password>"
+npm test
+```
+
+Mail settings can be overridden with `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, and
+`REPORT_EMAIL_TO`. The defaults use Yahoo SMTP on port 587 and the sender and
+recipient configured in the original Selenium sample. For local runs where
+email is intentionally not needed, set `EMAIL_REPORT_ENABLED=false`.
